@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<title>Javascript FAQ</title>
+		<style type="text/css">
+			body {
+				max-width: 35em;
+				background-color: #dfd0d0;
+				margin: auto;
+				font-family: sans-serif;
+			}
+			article {
+				border: 2px solid green;
+				padding: .5em;
+				margin: 1em;
+			}
+			textarea {
+			    width: 90%;
+			}
+		</style>
+	</head>
+
+	<body> 
+		<h1>FAQ example</h1>
+		<h2>Demonstrating simple use of Javascript UI</h2>
+		<article>
+			<h3>Can this be used by everyone?</h3>
+			<p>Yes, even users that don't have javascript (like robots) will be able to use this. It is a great way to present content with specific keywords helping you search result ranking.</p>
+		</article>
+		<article>
+			<h3>Could it be done in another way?</h3>
+			<p>Yes, it is possible to use css to make the text show on hover but then the solution would not work for mobile (where hover don't exist). The positive SEO effect will still be there.</p>
+		</article>
+		<article>
+			<h3>Do we need jQuery for this?</h3>
+			<p>No, this is done without libraries. But in jQuery there is a function or object called accordeon that does this a little nicer as it collapses the previous opened elements before it opens the next.</p>
+		</article>
+		<article>
+			<h3>Can I copy this code to my own site?</h3>
+			<p>Yes, feel free to use (parts of) this code as your own. <br> Kind regards, Bror Arnfast, Usabilitykonsulent</p>
+		</article>
+		<article>
+			<h3>Can it make me a pizza?</h3>
+			<p>Sorry, no. If you have more questions use the form below.</p>
+		</article>
+		<h2>Didn't find an answer? Put your question here</h2>
+		<article>
+			<form action="collect.php" method="post">
+				<Textarea Cols="50" Rows="8" id="oprTekst" name="question"></textarea> 
+				<br>
+				<br>
+				<input type="submit"  id="newAsked"  value="Send">
+			</form>
+		</article>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+alert('Javascript is Starting');
+		///////////////////////////////////////////pseudo code//////
+		// FAQ html
+		// javascript example by Bror Arnfast
+		// ---------------------------------------------------------
+		// find all h3
+		// loop through and  
+		// 		add onclick event "showAnswer" to all h3
+		// 		and make the element after display:none
+		///////////////////////////////////////////////////////////
+
+// find all h3
+var these = document.getElementsByTagName('h3');
+
+// if we have any h3
+if( these.length ){
+
+		// loop through and  
+        for( var n=0;n<these.length;n++ ){
+
+			// 		add onclick event "showAnswer" to all h3
+	        these[n].addEventListener('click',showAnswer,false);
+        	these[n].nextElementSibling.style.display="none";
+			// 		and make the element after display:none
+        }  
+}
+
+function showAnswer(){ 
+// luk alle p tags
+
+if( these.length ){
+
+		// loop through and  
+        for( var n=0;n<these.length;n++ ){
+
+			// 		add onclick event "showAnswer" to all h3
+	        these[n].addEventListener('click',showAnswer,false);
+        	these[n].nextElementSibling.style.display="none";
+			// 		and make the element after display:none
+        	these[n].parentElement.style.backgroundColor="#dfd0d0";
+
+        }  
+}
+
+
+        	this.nextElementSibling.style.display="block";
+        	this.parentElement.style.backgroundColor="white";
+
+
+
+}
+
+		</SCRIPT>
+
+
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Sara Fee Remote presentation</title>
+<style type="text/css">
+	article img{
+		width:100%;
+	}
+	article{
+		width:30%;
+		margin:auto;
+	}
+body {
+	transform: rotate(-7deg);
+}
+
+</style>
+</head>
+<body>
+<h1 onclick="window.history.back()">&lt;&lt;&lt; UX presentations</h1>
+<article>
+<h1>Sara Fee</h1>
+<audio id="myAudio">
+		<source src="UXAndSecurityCAPTCHA.mp3" type="audio/mp3">
+</audio>
+<img id="myPlayButton" src="Sara_Fee.jpg"></a>
+<p id="stopKnap">STOP</p>
+</article>
+<script type="text/javascript">
+
+var x = document.getElementById("myAudio");
+function playAudio() {
+    x.play();
+}
+function pauseAudio() {
+    x.pause();
+} 
+
+var p = document.getElementById("myPlayButton");
+p.onclick =playAudio;
+
+var q = document.getElementById("stopKnap");
+q.onclick =pauseAudio;
+
+</script>
+</body>
+</html>

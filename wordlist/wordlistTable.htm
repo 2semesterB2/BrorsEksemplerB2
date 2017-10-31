@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<title>Brors Javascript sorting exercise</title>
+	</head>
+
+	<body BGCOLOR="green" onLoad="document.getElementById('oprTekst').focus()"> 
+		<h1>ACME wordList on Demand</h1>
+		<p> Paste text here and press button.</p>
+		<form>
+			<Textarea Cols="60" Rows="8" id="oprTekst"></textarea> 
+			<br>
+			<br>
+			<input type="button" onClick="wordList()" name="wordListKnap"  value="wordList">
+		</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<SCRIPT LANGUAGE="JavaScript1.2">
+
+			function wordList()  {
+
+				///////////////////////////////////////////pseudo code//////
+				// wordlist html
+				// javascript example by Bror Arnfast
+				// ---------------------------------------------------------
+				// make all text lowercase
+				// divide text on . , and SPACE  (split function)
+				// create new array from the split  
+				// sort the list
+				// create new browser window
+				// put result in new window by
+				// 	   adding word by word but only if word is new
+				////////////////////////////////////////////////////////////
+
+				var tekst = document.getElementById('oprTekst').value.toLowerCase() ;
+				// make all text lowercase
+
+				var pattern = /[0-9()&:+\.\,\s]/;
+				// set pattern for dividing text on . , and SPACE  (split function)
+
+				var ordList = tekst.split(pattern)
+				// create new array from the split  
+				 
+				ordList.sort()
+				// sort the list
+
+				newWindow=window.open("","wordList\n");
+				// open new browser window  
+				newWindow.document.write("<html>\n");
+				newWindow.document.write("	<head>\n");
+				newWindow.document.write("		<title>ACME wordlist by demand</title>\n");
+				newWindow.document.write("		<style type='text/css'>\n");
+				newWindow.document.write("			table {\n");
+				newWindow.document.write("					color:green;\n");
+//				newWindow.document.write("					background-color:green;\n");
+				newWindow.document.write("			}\n");
+				newWindow.document.write("			tr>td {\n");
+				newWindow.document.write("			    color:black;\n");
+				newWindow.document.write("			    text-decoration:underline;\n");
+				newWindow.document.write("			}\n");
+				newWindow.document.write("			tr>td:first-child {\n");
+				newWindow.document.write("			    text-decoration:none;\n");
+				newWindow.document.write("			    padding-top:13px;\n");
+				newWindow.document.write("			    text-align:right ;\n");
+				newWindow.document.write("			}\n");
+				newWindow.document.write("		</style>\n");
+				newWindow.document.write("	</head>\n");
+				newWindow.document.write("	<body>\n");
+				newWindow.document.write("		<h1>ACME wordlist by demand</h1>	\n");
+				newWindow.document.write("		<section>\n");
+
+				var remember = "";
+
+				//put result in new window   IN A TABLE
+				newWindow.document.write("<table>\n			<tr><td>");
+
+				for (i=0; i<ordList.length; i++) {
+						if (remember != ordList[i])	{ 
+							newWindow.document.write("</td></tr>\n  		<tr><td>"+ordList[i]+"</td><td>__");
+						} else {
+							if(ordList[i] != ""){
+								newWindow.document.write("__");
+							};
+						}	;
+					// add word by word but only if word is new
+					remember = ordList[i];	
+				}
+				newWindow.document.write("		</td></tr>\n");
+				newWindow.document.write("</table>\n");
+
+				newWindow.document.write("<section>\n</body>\n</html>\n");
+				newWindow.document.close();				
+			}
+		</SCRIPT>
+	</body>
+</html>

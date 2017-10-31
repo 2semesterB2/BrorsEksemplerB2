@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+  background-position: top;
+}
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  </style>
+  <script>
+  $( function() {
+    var availableTags = [
+      "afbrydere",
+"afbrydere-stikkontakter",
+"affaldsstativer",
+"affugtere",
+"aflob-og-kloak",
+"afløb",
+"afpassede",
+"afpassede-taepper",
+"afskærmning",
+"akku",
+"akku-bore-skruemaskiner",
+"alarmer",
+"alarmer-rogalarmer",
+"altan-indretning",
+"altanen",
+"altanindretning",
+"arbejdsbelysning",
+"arbejdsborde",
+"arbejdslysbelysning",
+"arbejdsradioer",
+"arbejdsradioer-kaffemaskiner",
+"arbejdstoj-og-sikkerhedsudstyr",
+"arbejdstoj-sikkerhedsudstyr",
+"arbejdstøj",
+"armaturer",
+"artikler",
+"artikler",
+"artikler",
+"atv'er",
+"atv'er",
+"atv'er",
+"atv-er",
+"auto",
+"auto-badtilbehor",
+"avisvarer",
+"avisvarer",
+"avisvarer",
+"bade-badtilbehor",
+"bade-gummibade",
+"badeforhang-og-tilbeoer",
+"badeforhæng",
+"badekar",
+"badekar-spa",
+"badematter",
+"bademåtter",
+"badevaegte",
+"badevaerelse",
+"badevaerelseslamper",
+"badevaerelsesmobler",
+"badevaerelsesmobler-fra-",
+"badevaerelsesmobler-op-til-",
+"badevaerelsestilbehor",
+"badevægte",
+"badeværelse",
+"badeværelseslamper",
+"badeværelsesmøbler",
+"badeværelsestilbehør",
+"badmaling",
+"badpakker",
+"baelsted-tilbehoer",
+"baenkslibere-bandslibere",
+"bags",
+"bajonetsave",
+"batterier",
+"batterier-ladere",
+"batterier-opladning",
+"bauhaus-rationel-vinduer",
+"bede",
+"befaestelse-beslag",
+"befæstelse",
+"bekaempelsesmidler",
+"beklædning",
+"bekæmpelsesmidler",
+"belaegningssten",
+"belysning",
+"belysning",
+"belysning-dekoration",
+"belysning",
+"belægning",
+"belægningssten",
+"beregner",
+"beskaering",
+"beskæring",
+"beslag",
+"beslag",
+"beslag",
+"big",
+"big-bags",
+"bigbags",
+"bil-bad-cykeltilbehor",
+"bilpleje",
+"bilpleje-tilbehor"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<form class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</form>
+ 
+ 
+</body>
+</html>
