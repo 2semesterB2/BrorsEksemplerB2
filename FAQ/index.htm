@@ -35,11 +35,11 @@
 		</article>
 		<article>
 			<h3>Do we need jQuery for this?</h3>
-			<p>No, this is done without libraries. But in jQuery there is a function or object called accordeon that does this a little nicer as it collapses the previous opened elements before it opens the next.</p>
+			<p>No, this is done without libraries. But in jQuery there is an object called accordeon with methods that does this a little nicer as it animates the collapse of the previous opened elements before it (animated) opens the next.</p>
 		</article>
 		<article>
 			<h3>Can I copy this code to my own site?</h3>
-			<p>Yes, feel free to use (parts of) this code as your own. <br> Kind regards, Bror Arnfast, Usabilitykonsulent</p>
+			<p>Yes, feel free to use (any or all parts of) this code as your own. <br> Kind regards, Bror Arnfast, Usabilitykonsulent</p>
 		</article>
 		<article>
 			<h3>Can it make me a pizza?</h3>
@@ -47,7 +47,7 @@
 		</article>
 		<h2>Didn't find an answer? Put your question here</h2>
 		<article>
-			<form action="collect.php" method="post">
+			<form action="collectQuestions.php" method="post">
 				<Textarea Cols="50" Rows="8" id="oprTekst" name="question"></textarea> 
 				<br>
 				<br>
@@ -58,7 +58,7 @@
 
 <SCRIPT LANGUAGE="JavaScript">
 
-alert('Javascript is Starting');
+alert('Javascript is on and Starting');
 		///////////////////////////////////////////pseudo code//////
 		// FAQ html
 		// javascript example by Bror Arnfast
@@ -67,6 +67,10 @@ alert('Javascript is Starting');
 		// loop through and  
 		// 		add onclick event "showAnswer" to all h3
 		// 		and make the element after display:none
+		//
+		// function showAnswer should
+		// 		hide the one thats opens
+		// 		open the one that was clicked
 		///////////////////////////////////////////////////////////
 
 // find all h3
@@ -75,43 +79,37 @@ var these = document.getElementsByTagName('h3');
 // if we have any h3
 if( these.length ){
 
-		// loop through and  
-        for( var n=0;n<these.length;n++ ){
+	// loop through and  
+    for( var n=0;n<these.length;n++ ){
 
-			// 		add onclick event "showAnswer" to all h3
-	        these[n].addEventListener('click',showAnswer,false);
-        	these[n].nextElementSibling.style.display="none";
-			// 		and make the element after display:none
-        }  
+		// 		add onclick event "showAnswer" to all h3
+        these[n].addEventListener('click',showAnswer,false);
+		// 		and make the element after display:none
+    	these[n].nextElementSibling.style.display="none";
+    }  
 }
 
 function showAnswer(){ 
-// luk alle p tags
+// close the one thats open translates to close all
 
-if( these.length ){
+	if( these.length ){
 
 		// loop through and  
         for( var n=0;n<these.length;n++ ){
 
-			// 		add onclick event "showAnswer" to all h3
-	        these[n].addEventListener('click',showAnswer,false);
-        	these[n].nextElementSibling.style.display="none";
 			// 		and make the element after display:none
+        	these[n].nextElementSibling.style.display="none";
+        	// 		and change color showing inactivity
         	these[n].parentElement.style.backgroundColor="#dfd0d0";
 
-        }  
-}
-
-
-        	this.nextElementSibling.style.display="block";
-        	this.parentElement.style.backgroundColor="white";
-
-
-
+    	}  
+	}
+	// now show the one that was clicked
+    this.nextElementSibling.style.display="block";
+    // and make it bright white backgound
+    this.parentElement.style.backgroundColor="white";
 }
 
 		</SCRIPT>
-
-
 	</body>
 </html>

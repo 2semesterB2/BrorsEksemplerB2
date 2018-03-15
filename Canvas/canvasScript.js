@@ -1,17 +1,17 @@
-// Werners næste javascript
+// Werners javascript
 function wernersOnLoad(){
 	var carl=document.getElementById("wernersCanvas");
 	var carlCtx=carl.getContext("2d");
 // draw here  		
-	var nailX=50;
+	var nailX=200;
 	var farve=0;
 	for(var i=0;i<140;i=i+1){	
 		carlCtx.beginPath();
 		carlCtx.moveTo(200,0);
 		carlCtx.lineTo(nailX,450);
 		carlCtx.strokeStyle="rgb("+farve+"%,69%,69%)";
-		carlCtx.stroke();
 		farve=farve+3;
+		carlCtx.stroke();
 		nailX=nailX+5;
 	}
 
@@ -23,8 +23,6 @@ function wernersOnLoad(){
 		carlCtx.beginPath();
 		carlCtx.moveTo(0,nailX-750);
 		carlCtx.lineTo(nailX,450);
-/*		carlCtx.strokeStyle="rgb("+farve+"%,69%,69%)";
-*/
 		carlCtx.strokeStyle="rgb("+farve+"%,"+(100-farve)+"%,69%)";
 		carlCtx.stroke();
 		nailX=nailX+7;
@@ -33,20 +31,11 @@ function wernersOnLoad(){
 			clearInterval(loopMe);
 		}
 	
-}, 35 
+}, 15 
 	);
-
+/*
 drawagain(carlCtx);
 drawagain(carlCtx);
-// drawagain(carlCtx);
-// drawagain(carlCtx);
-// drawagain(carlCtx);
-// drawagain(carlCtx);
-// drawagain(carlCtx);
-
-
-
-
 
 
 
@@ -65,9 +54,8 @@ function drawagain(Ctx){
 		farve=farve+3;
 		nailX=nailX+8;
 	}
-	var nailX=-50;
-	var nailY=700 +  Math.random()*200;
 	var nailX=-50 + Math.random()*600;
+	var nailY=700 +  Math.random()*200;
 	var nailTO=100 + Math.random()*700;
 
 	var farve=0;
@@ -81,11 +69,11 @@ function drawagain(Ctx){
 		nailX=nailX+9;
 	}  
 }
+*/
+}
 
 function wernersDate() {
 
 	alert("Hi there, best date ever: "+ Date());
-
-}
 
 }
